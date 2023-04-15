@@ -4,4 +4,15 @@
  */
 
 // Style dla pliku z przykładem HTML fragmentu
-@import './example';
+// @import './example';
+@import './components/container';
+@import './layout/loader';
+@import './layout/header-home';
+@import './layout/header-library';
+@import './layout/main-section-home';
+@import './layout/main-section-library';
+@import './layout/pagination';
+@import './layout/footer';
+@import './layout/main-modal-movie';
+@import './layout/footer-modal-team';
+@import './layout/scroll-up-btn';
