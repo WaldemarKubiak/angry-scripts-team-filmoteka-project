@@ -17,7 +17,7 @@
     display: flex;
     gap: 40px;
     margin-right: 20px;
-    color: #ffffff;
+    color: $font-color-primary;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -37,7 +37,7 @@
   &-logo {
     margin-left: 20px;
     fill: transparent;
-    stroke: white;
+    stroke: $font-color-primary;
     width: 24px;
     height: 24px;
   }
@@ -48,18 +48,18 @@
 
   &-label {
     border-bottom: 0.5px solid;
-    border-bottom-color: #e5e5e5;
+    border-bottom-color: $background-color-primary;
   }
 
   &-input {
     background-color: transparent;
     border: none;
     outline: none;
-    color: #ffffff;
+    color: $font-color-primary;
     width: 260px;
 
     &::placeholder {
-      color: #ffffff;
+      color: $font-color-primary;
     }
   }
 
@@ -73,7 +73,7 @@
   &-search {
     width: 16px;
     height: 16px;
-    stroke: white;
+    stroke: $font-color-primary;
     fill: transparent;
   }
 }
@@ -115,7 +115,7 @@
       display: flex;
       align-items: center;
       text-align: center;
-      color: #ffffff;
+      color: $font-color-primary;
     }
 
     &-list {
