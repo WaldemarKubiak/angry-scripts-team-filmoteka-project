@@ -1,0 +1,36 @@
+.footer {
+  background-color: #f7f7f7;
+  color: #545454;
+  text-align: center;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.14;
+  padding-top: 29px;
+  padding-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.19;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 30px;
+    padding-bottom: 28px;
+  }
+
+  &__svg {
+    width: 14px;
+    height: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+    fill: #ff6b08;
+  }
+
+  &__students {
+    text-decoration: underline;
+    color: #545454;
+  }
+}
