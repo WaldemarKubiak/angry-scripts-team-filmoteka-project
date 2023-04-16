@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; //czy zostawiamy, to samo w modern-normalize v1.1.0
+}
+
+*::before,
+*::after {
+  box-sizing: border-box; //czy zostawiamy, to samo w modern-normalize v1.1.0
+}
+
+//BODY NA BAZIE MOBILE-FIRST
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33; // 16px/12px
+  color: $font-color-secondary; //black
+  background-color: $background-color-tertiary; //white
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0; //czy zostawiamy, to samo w modern-normalize v1.1.0
+  padding: 0; //czy zostawiamy, to samo w modern-normalize v1.1.0
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none; //czy zostawiamy, to samo w modern-normalize v1.1.0
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  color: inherit;
+}
+
+a:visited {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer; //czy zostawiamy, to samo w modern-normalize v1.1.0
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+label,
+input,
+textarea {
+  display: block;
+}
