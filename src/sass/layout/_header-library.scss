@@ -1,37 +1,36 @@
 .header-library {
   height: 216px;
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(../images/mob-background-library-1x.jpg);
+    url(../images/phone/my-library-header-phone.jpg);
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/mob-background-library-2x.jpg);
+      url(../images/phone/my-library-header-phone@2x.jpg);
   }
 
   @media screen and (min-width: 768px) {
     height: 220px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/tab-background-library-1x.jpg);
+      url(../images/tablet/my-library-header-tablet.jpg);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../images/tab-background-library-2x.jpg);
+        url(../images/desktop/my-library-header-desktop@2x.jpg);
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    width: 1024px;
+  @media screen and (min-width: 1280px) {
     height: 215px;
-    padding-left: 71px;
-    padding-right: 71px;
+
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/desk-background-library-1x.jpg);
+      url(../images/desktop/my-library-header-desktop.jpg);
 
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-        url(../images/desk-background-library-2x.jpg);
+        url(../images/desktop/my-library-header-desktop@2x.jpg);
     }
   }
 }
@@ -43,6 +42,25 @@
 .header-library__logo-link {
   text-decoration: none;
 }
+
+.header-library__logo-icon {
+  margin-left: 20px;
+  fill: transparent;
+  stroke: white;
+  width: 24px;
+  height: 24px;
+}
+.header-library__logo-link {
+  padding: 0;
+  background-color: inherit;
+  fill: currentColor;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-top: 42px;
+  align-items: center;
+  gap: 10px;
+}
 .header-library__logotext {
   display: none;
   text-decoration: none;
@@ -52,7 +70,7 @@
   line-height: 35px;
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: $font-color-primary;
   @media screen and (min-width: 768px) {
     display: flex;
     margin-left: 10px;
@@ -74,9 +92,6 @@
 
 .header-library__navigation-item:first-child {
   margin-right: 39px;
-  @media screen and (min-width: 768px) {
-    margin-right: 141px;
-  }
 }
 .header-library__navigation-link {
   text-decoration: none;
@@ -86,19 +101,17 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-  text-decoration: none;
-  color: #ffffff;
+  color: $font-color-primary;
   cursor: pointer;
 }
 .header-library__navigation-link-active {
-  border-bottom: 3px solid #ff001b;
+  border-bottom: 3px solid $accent-color-underline;
 }
 
 .header-library__button-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-right: 40px;
+  align-items: center;
 }
 .header-library__button-list {
   display: flex;
@@ -120,13 +133,13 @@
   background: inherit;
   border: 1px solid #ffffff;
   border-radius: 5px;
-  color: #fff;
+  color: $font-color-primary;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     width: 152px;
   }
 }
 .header-library__button-list-item:hover {
-  background-color: #ff6b08;
-  border: 1px solid #ff6b08;
+  background-color: $accent-color;
+  border: 1px solid $accent-color;
 }
