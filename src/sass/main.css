@@ -1,0 +1,155 @@
+@charset "UTF-8";
+/*
+ * Główny plik dla stylów.
+ * Wszystkie partials podłączamy tutaj.
+ */
+.container {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 320px;
+  padding: 0 20px;
+  /*
+  @media screen and (min-width: 480px) {
+    // width: 480px; //wyłączone, do tst - gdy nie zatrybi pow. min-width: 320px
+  }
+  */
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 32px;
+  }
+}
+
+.header {
+  background-image: url(/src/images/phone/home-header-phone.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top, center;
+  width: 100%;
+  height: 230px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.header-list {
+  display: flex;
+  gap: 40px;
+  margin-right: 20px;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.header-form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 56px;
+}
+.header-logo {
+  margin-left: 20px;
+  fill: transparent;
+  stroke: white;
+  width: 24px;
+  height: 24px;
+}
+.header-logoText {
+  display: none;
+}
+.header-label {
+  border-bottom: 0.5px solid;
+  border-bottom-color: #e5e5e5;
+}
+.header-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  width: 260px;
+}
+.header-input::-moz-placeholder {
+  color: #ffffff;
+}
+.header-input::placeholder {
+  color: #ffffff;
+}
+.header-btn {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  display: contents;
+}
+.header-search {
+  width: 16px;
+  height: 16px;
+  stroke: white;
+  fill: transparent;
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/phone/home-header-phone@2x.jpg);
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    background-image: url(/src/images/tablet/home-header-tablet.jpg);
+    height: 216px;
+  }
+  .header-input {
+    width: 316px;
+  }
+  .header-logo {
+    margin-left: 32px;
+  }
+  .header-logoWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-logoText {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+  .header-list {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/tablet/home-header-tablet@2x.jpg);
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    background-image: url(/src/images/desktop/home-header-desktop.jpg);
+  }
+  .header-input {
+    width: 374px;
+  }
+}
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/desktop/home-header-desktop@2x.jpg);
+  }
+}/*# sourceMappingURL=main.css.map */
