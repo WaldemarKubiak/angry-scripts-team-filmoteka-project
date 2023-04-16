@@ -99,6 +99,11 @@
   fill: transparent;
 }
 
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/phone/home-header-phone@2x.jpg);
+  }
+}
 @media (min-width: 768px) {
   .header {
     background-image: url(/src/images/tablet/home-header-tablet.jpg);
@@ -106,6 +111,9 @@
   }
   .header-input {
     width: 316px;
+  }
+  .header-logo {
+    margin-left: 32px;
   }
   .header-logoWrapper {
     display: flex;
@@ -121,7 +129,15 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
+  }
+  .header-list {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/tablet/home-header-tablet@2x.jpg);
   }
 }
 @media (min-width: 1280px) {
@@ -130,5 +146,10 @@
   }
   .header-input {
     width: 374px;
+  }
+}
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/desktop/home-header-desktop@2x.jpg);
   }
 }/*# sourceMappingURL=main.css.map */

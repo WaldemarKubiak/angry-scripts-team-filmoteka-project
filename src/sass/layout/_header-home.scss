@@ -77,6 +77,13 @@
     fill: transparent;
   }
 }
+@media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .header {
+      background-image: url(/src/images/phone/home-header-phone@2x.jpg);
+    }
+  }
 
 //<-------------tablet------------->
 
@@ -87,6 +94,10 @@
 
     &-input {
       width: 316px;
+    }
+
+    &-logo {
+      margin-left: 32px;
     }
 
     &-logoWrapper {
@@ -104,9 +115,21 @@
       display: flex;
       align-items: center;
       text-align: center;
-      color: #FFFFFF;
+      color: #ffffff;
+    }
+
+    &-list {
+      margin-right: 40px;
     }
   }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .header {
+      background-image: url(/src/images/tablet/home-header-tablet@2x.jpg);
+    }
+}
 }
 
 //<-------------Desktop------------->
@@ -119,4 +142,12 @@
       width: 374px;
     }
   }
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    .header {
+      background-image: url(/src/images/desktop/home-header-desktop@2x.jpg);
+    }
+}
 }
