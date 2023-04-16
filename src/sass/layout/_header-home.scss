@@ -1,0 +1,43 @@
+.header {
+  background-image: url(/src/images/heder_main_mob.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top, center;
+  width: 100%;
+  height: 230px;
+
+  &-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &-list {
+    display: flex;
+    gap: 20px;
+  }
+  
+  &-form {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+  }
+}
+
+//<-------------tablet------------->
+
+@media (min-width: 768px) {
+  .header {
+    background-image: url(/src/images/header_main_tab.png);
+    height: 216px;
+  }
+}
+
+//<-------------Desktop------------->
+
+@media (min-width: 1280px) {
+  .header {
+    background-image: url(/src/images/header_main_desktop.png);
+  }
+}
