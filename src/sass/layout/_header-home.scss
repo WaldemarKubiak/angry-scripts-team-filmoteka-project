@@ -16,8 +16,7 @@
   &-list {
     display: flex;
     gap: 40px;
-    margin-right: 20px;
-    color: #ffffff;
+    color: $font-color-primary;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -25,6 +24,12 @@
     line-height: 14px;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  &-item {
+    &-isActive {
+      border-bottom: 3px solid $accent-color-underline;
+    }
   }
 
   &-form {
@@ -35,9 +40,8 @@
   }
 
   &-logo {
-    margin-left: 20px;
     fill: transparent;
-    stroke: white;
+    stroke: $font-color-primary;
     width: 24px;
     height: 24px;
   }
@@ -48,18 +52,24 @@
 
   &-label {
     border-bottom: 0.5px solid;
-    border-bottom-color: #e5e5e5;
+    border-bottom-color: $background-color-primary;
+    display: flex;
   }
 
   &-input {
     background-color: transparent;
     border: none;
     outline: none;
-    color: #ffffff;
+    color: $font-color-primary;
     width: 260px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
 
     &::placeholder {
-      color: #ffffff;
+      color: $font-color-primary;
     }
   }
 
@@ -73,17 +83,17 @@
   &-search {
     width: 16px;
     height: 16px;
-    stroke: white;
+    stroke: $font-color-primary;
     fill: transparent;
   }
 }
 @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .header {
-      background-image: url(/src/images/phone/home-header-phone@2x.jpg);
-    }
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/phone/home-header-phone@2x.jpg);
   }
+}
 
 //<-------------tablet------------->
 
@@ -94,10 +104,6 @@
 
     &-input {
       width: 316px;
-    }
-
-    &-logo {
-      margin-left: 32px;
     }
 
     &-logoWrapper {
@@ -115,11 +121,7 @@
       display: flex;
       align-items: center;
       text-align: center;
-      color: #ffffff;
-    }
-
-    &-list {
-      margin-right: 40px;
+      color: $font-color-primary;
     }
   }
 
@@ -129,7 +131,7 @@
     .header {
       background-image: url(/src/images/tablet/home-header-tablet@2x.jpg);
     }
-}
+  }
 }
 
 //<-------------Desktop------------->
@@ -149,5 +151,5 @@
     .header {
       background-image: url(/src/images/desktop/home-header-desktop@2x.jpg);
     }
-}
+  }
 }
