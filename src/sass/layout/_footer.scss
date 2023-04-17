@@ -1,13 +1,17 @@
 .footer {
-  background-color: #f7f7f7;
-  color: #545454;
+  background-color: $background-color-secondary;
+  color: $font-color-tertiary;
   text-align: center;
   width: 100%;
   font-size: 14px;
   line-height: 1.14;
   padding-top: 29px;
   padding-bottom: 30px;
+  font-weight: 400;
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     font-size: 16px;
@@ -21,16 +25,38 @@
     padding-bottom: 28px;
   }
 
+  &__box {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__info {
+    display: inline-flex;
+  }
+
+  &__info--divide {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-right: 5px;
+    }
+  }
+
+  &__info--students {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: $font-color-tertiary;
+  }
+
   &__svg {
     width: 14px;
     height: 12px;
     margin-left: 10px;
     margin-right: 10px;
-    fill: #ff6b08;
-  }
-
-  &__students {
-    text-decoration: underline;
-    color: #545454;
+    fill: $accent-color;
+    align-self: center;
   }
 }
