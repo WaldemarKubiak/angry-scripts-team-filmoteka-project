@@ -1,23 +1,28 @@
 <header class="header">
-  <nav class="header-nav">
+  <nav class="header-nav container">
     <div class="header-logoWrapper">
-      <svg class="header-logo"><use href="/src/images/icon.svg#icon-icon-film"></use></svg>
+      <svg class="header-logo">
+        <use href="/src/images/icon.svg#icon-icon-film"></use>
+      </svg>
       <div class="header-logoText">Filmoteka</div>
     </div>
     <ul class="header-list">
-      <li><a href="/src/index.html">Home</a></li>
-      <li><a href="/src/library.html">My library</a></li>
+      <li class="header-item-isActive">
+        <a href="/src/index.html">Home</a>
+      </li>
+      <li class="header-item">
+        <a href="/src/library.html">My library</a>
+      </li>
     </ul>
   </nav>
   <form action="" class="header-form">
     <label class="header-label"
-      ><input type="text" class="header-input" placeholder="Move search" /><button
-        class="header-btn"
-        type="submit"
-      >
+      ><input type="text" class="header-input" placeholder="Move search" />
+      <button class="header-btn" type="submit">
         <svg class="header-search">
           <use href="/src/images/icon.svg#icon-search"></use>
-        </svg></button
-    ></label>
+        </svg>
+      </button>
+    </label>
   </form>
 </header>

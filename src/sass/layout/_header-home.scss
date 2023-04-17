@@ -16,7 +16,6 @@
   &-list {
     display: flex;
     gap: 40px;
-    margin-right: 20px;
     color: $font-color-primary;
     font-family: 'Roboto';
     font-style: normal;
@@ -27,6 +26,12 @@
     text-transform: uppercase;
   }
 
+  &-item {
+    &-isActive {
+      border-bottom: 3px solid $accent-color-underline;
+    }
+  }
+
   &-form {
     display: flex;
     justify-content: center;
@@ -35,7 +40,6 @@
   }
 
   &-logo {
-    margin-left: 20px;
     fill: transparent;
     stroke: $font-color-primary;
     width: 24px;
@@ -49,6 +53,7 @@
   &-label {
     border-bottom: 0.5px solid;
     border-bottom-color: $background-color-primary;
+    display: flex;
   }
 
   &-input {
@@ -57,6 +62,11 @@
     outline: none;
     color: $font-color-primary;
     width: 260px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
 
     &::placeholder {
       color: $font-color-primary;
@@ -78,12 +88,12 @@
   }
 }
 @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    .header {
-      background-image: url(/src/images/phone/home-header-phone@2x.jpg);
-    }
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .header {
+    background-image: url(/src/images/phone/home-header-phone@2x.jpg);
   }
+}
 
 //<-------------tablet------------->
 
@@ -94,10 +104,6 @@
 
     &-input {
       width: 316px;
-    }
-
-    &-logo {
-      margin-left: 32px;
     }
 
     &-logoWrapper {
@@ -117,10 +123,6 @@
       text-align: center;
       color: $font-color-primary;
     }
-
-    &-list {
-      margin-right: 40px;
-    }
   }
 
   @media screen and (min-device-pixel-ratio: 2),
@@ -129,7 +131,7 @@
     .header {
       background-image: url(/src/images/tablet/home-header-tablet@2x.jpg);
     }
-}
+  }
 }
 
 //<-------------Desktop------------->
@@ -149,5 +151,5 @@
     .header {
       background-image: url(/src/images/desktop/home-header-desktop@2x.jpg);
     }
-}
+  }
 }
