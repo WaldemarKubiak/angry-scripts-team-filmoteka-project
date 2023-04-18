@@ -17,11 +17,9 @@
     font-size: 16px;
     line-height: 1.19;
     padding-top: 30px;
-    padding-bottom: 30px;
   }
 
-  @media screen and (min-width: 1024px) {
-    padding-top: 30px;
+  @media screen and (min-width: 1280px) {
     padding-bottom: 28px;
   }
 
@@ -36,12 +34,11 @@
   }
 
   &__info--divide {
-    @media screen and (max-width: 767px) {
-      margin-bottom: 10px;
-    }
+    margin-bottom: 10px;
 
     @media screen and (min-width: 768px) {
       margin-right: 5px;
+      margin-bottom: 0;
     }
   }
 
