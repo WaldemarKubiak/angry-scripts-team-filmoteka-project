@@ -1,5 +1,5 @@
 .header-library {
-  height: 216px;
+  height: 230px;
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    height: 220px;
+    height: 219px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/tablet/my-library-header-tablet.jpg);
 
@@ -23,8 +23,7 @@
   }
 
   @media screen and (min-width: 1280px) {
-    height: 215px;
-
+    height: 216px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/desktop/my-library-header-desktop.jpg);
 
