@@ -1,0 +1,58 @@
+.go-up-btn {
+  display: none;
+  //   display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.icon-up {
+  fill: $accent-color-btn;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-up:hover,
+.icon-up:focus {
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 480px) {
+  //   .icon-up {
+  //     width: 40px;
+  //     height: 45px;
+  //   }
+  .go-up-btn {
+    right: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .icon-up {
+    width: 40px;
+    height: 40px;
+  }
+  .go-up-btn {
+    right: 25px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .icon-up {
+    width: 60px;
+    height: 60px;
+  }
+  .go-up-btn {
+    right: 50px;
+  }
+}
