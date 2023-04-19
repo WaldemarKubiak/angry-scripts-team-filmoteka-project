@@ -4,19 +4,17 @@
   min-width: 320px; //do sprawdzenia. ew. komentarz jak uruchomimy min-width: 480px
   padding: 0 20px;
 
-  /*
   @media screen and (min-width: 480px) {
-    // width: 480px; //wyłączone, do tst - gdy nie zatrybi pow. min-width: 320px
+    width: 480px; //wyłączone, do tst - gdy nie zatrybi pow. min-width: 320px
   }
-  */
 
   @media screen and (min-width: 768px) {
-    // width: 768px;
+    width: 768px;
     padding: 0 32px;
   }
 
   @media screen and (min-width: 1280px) {
-    max-width: 1280px;
+    width: 1280px;
     padding: 0 32px;
   }
 }
