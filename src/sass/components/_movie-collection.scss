@@ -4,6 +4,25 @@
 }
 // ------------------------
 
+.movie-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 59px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 15px;
+    padding-top: 44px;
+  }
+}
 .movie-card {
   width: 280px;
   height: 440px;
@@ -13,9 +32,10 @@
     height: 495px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     width: 395px;
     height: 634px;
+    margin-top: 16px;
   }
 
   &__img {
@@ -29,9 +49,14 @@
       height: 455px;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1280px) {
       height: 574px;
     }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 90%;
   }
 }
 
@@ -45,7 +70,7 @@
   line-height: 16px;
   padding-top: 10px;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     height: 60px;
     padding-top: 12px;
     font-size: 20px;
