@@ -10,6 +10,9 @@
 //
 // import renderMovieCollection from './renderMovieCollection';
 
+import API from './api';
+import { renderModal } from './movie-modal';
+
 const renderMovieCollection = movieCollection => {
   const movieCollectionDOM = document.querySelector('.movie-collection');
 
@@ -30,6 +33,16 @@ const renderMovieCollection = movieCollection => {
     .join('');
 
   movieCollectionDOM.innerHTML = markup;
+
+  const movieCardsArr = document.querySelectorAll('.movie-card');
+  movieCardsArr.forEach(movieCard => {
+    movieCard.addEventListener('click', event => {
+      const movieID = event.currentTarget.dataset.id;
+      API.getMovieByID(movieID)
+        .then(renderModal)
+        .catch(error => console.log(error.message));
+    });
+  });
 };
 
 export default renderMovieCollection;

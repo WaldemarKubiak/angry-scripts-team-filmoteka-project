@@ -5,8 +5,8 @@ const MAIN_URL = 'https://api.themoviedb.org/3';
 //---`${MAIN_URL}/movie/550?api_key=${API_KEY}`;---///
 
 // getTrending() - zaczytuje trendujące filmy z ostatniego tygodnia,
-// getMovieByID(id) - zaczytuje dane filmu wg id,
 // getMovies(query) - zaczytuje filmy wg wpisanego stringa przekazanego jako parametr,
+// getMovieByID(id) - zaczytuje dane filmu wg id,
 // getGenres() - zaczytuje tablicę z gatunkami filmów
 //
 // W następnej wersji do pierwszych dwóch funkcji dodam parametr page (z domyślna wartością = 1)
@@ -47,7 +47,6 @@ const getMovieByID = async id => {
     const GET_MOVIE_BY_ID_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
     const response = await fetch(GET_MOVIE_BY_ID_URL);
     const data = await response.json();
-    console.log('Data: ', data);
     return data;
   } catch (error) {
     console.log(error.message);
