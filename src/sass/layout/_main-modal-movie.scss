@@ -1,49 +1,111 @@
-.modal {
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform 750ms ease;
+  padding: 20px;
 
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
+  &--is-hidden {
+    transform: translateY(-120%);
+  }
+}
+
+.movie-modal {
+  background: $background-color-tertiary;
+  width: 280px;
+  padding: 48px 20px 46px 20px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__img {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba;
-    z-index: 10;
+    height: auto;
+    border-radius: 5px;
+  }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  &__about-header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__overview {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+  }
 }
 
-/* Main Modal Movie ( content-box )*/
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 44px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #000000;
 
-.modal-content {
-    margin: 15%;
-    padding: 25px;
-    width: 75%;
-    border: 1px solid #555;
-    background: #fefefe;
-
+  &--accent {
+    border: none;
+    background: $accent-color-btn;
+    color: white;
+    padding: 6px 20px;
+  }
 }
 
-/* Close BTN*/
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
 
-.close {
-    float: right;
-    color: #aaafaa;
-    font-size: 30px;
-    font-weight: bold;
-}
+  @media screen and (min-width: 480px) {
+    gap: 20px;
+  }
 
-.close:hover,
-.close:focus {
-    color: #7777;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-@media screen and (max-width: 700px) {
-
-    .modal-content {
-        overflow: scroll;
-        width: 90%;
-        max-height: 90%;
-    }
+  @media screen and (min-width: 768) {
+    gap: 15px;
+  }
 }

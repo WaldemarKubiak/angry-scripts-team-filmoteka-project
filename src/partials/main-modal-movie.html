@@ -1,24 +1,16 @@
-<!-- Movie card-->
-
-<div class="movie-card">
-    <h2 class="movie-title">Movie title</h2>
-    <img> src="" alt="" class="">
-    <button class="movie-button" data-movie-id="">Open movie</button>
-    <button class="movie-watch-button" data-movie-id="">Add to watched</button>
-    <button class="movie-queue-button" data-movie-id="">Add to queue</button>
-</div>
-
-<!-- Main Modal Movie -->
-
-<div id="mainModalMovie" class="modal">
-
-    <!--Modal content-->
-
-    <div class="modal-content"> <span class="close">&times;</span>
-        <h2 class="movie-title">Movie title</h2>
-        <iframe id="movie-iframe" frameborder="0" allowfullscreen></iframe>
-        <p class="movie-description">Movie description</p>
-        <button class="movie-description-button" data-movie-id="">Add to watched</button>
-        <button class="movie-queue-button" data-movie-id="">Add to queue</button>
-    </div>
+<div class="backdrop backdrop--is-hidden" data-modal>
+  <div class="movie-modal">
+    <button class="button-close" data-modal-close>X</button>
+    <!-- <div class="movie-modal__img"></div>
+    <div class="movie-modal__content">
+      <h2 class="movie-modal__title"></h2>
+      <p class="movie-modal__about"></p>
+      <div class="btn-wrapper">
+        <button type="button" class="button button--accent" id="addToWatchedBtn">
+          ADD TO WATCHED
+        </button>
+        <button type="button" class="button" id="addToQueueBtn">ADD TO QUEUE</button>
+      </div>
+    </div> -->
+  </div>
 </div>
