@@ -1,33 +1,7 @@
 import API from './api';
-let movieID = '640146';
 
-(() => {
-  const refs = {
-    openModalCard: document.querySelector('.movie-collection'), // do zmiany, jak będziemy mieli kolekcję filmów a nie jedna kartę
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    modal: document.querySelector('[data-modal]'),
-  };
-
-  refs.openModalCard.addEventListener('click', openModal); // do zmiany, jak będziemy mieli kolekcję filmów a nie jedna kartę
-  refs.closeModalBtn.addEventListener('click', closeModal);
-
-  function openModal() {
-    // zaczytać z eventu id filmu - atrybut data-id
-
-    refs.modal.classList.remove('backdrop--is-hidden');
-  }
-
-  function closeModal() {
-    refs.modal.classList.add('backdrop--is-hidden');
-  }
-})();
-
-API.getMovieByID(movieID).then(renderModal);
-
-function renderModal({ title, overview, poster_path }) {
+export function renderModal({ title, overview, poster_path }) {
   const movieModal = document.querySelector('.movie-modal');
-
-  console.log('Title: ', title, 'About: ', overview);
 
   const markup = `
     <div class="movie-modal__img-container">
@@ -52,4 +26,13 @@ function renderModal({ title, overview, poster_path }) {
   movieModalDOM.innerHTML = markup;
 
   movieModal.append(movieModalDOM);
+
+  const modal = document.querySelector('[data-modal]');
+  modal.classList.remove('backdrop--is-hidden');
+
+  const closeModalBtn = document.querySelector('[data-modal-close]');
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('backdrop--is-hidden');
+    movieModalDOM.innerHTML = '';
+  });
 }
