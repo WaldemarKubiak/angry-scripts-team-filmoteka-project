@@ -7,13 +7,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
   background-color: $background-color-primary;
-  transition: 3s, visibility 3s; //time for animated traniston equal transitionend in js
+  transition: 2.5s, visibility 2.5s;
 }
 
-.loader-hidden {
+.loader-run {
   opacity: 0;
   visibility: hidden;
+  // visibility: visible;
+  // opacity: 1;
 }
 
 .loader::after {
@@ -23,7 +26,7 @@
   border: 15px solid $background-color-tertiary;
   border-top-color: $accent-color;
   border-radius: 50%;
-  animation: loading 0.75s ease infinite;
+  animation: loading 0.8s ease infinite;
 }
 
 @keyframes loading {
