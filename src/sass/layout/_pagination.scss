@@ -1,0 +1,45 @@
+.pagination {
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  &-list {
+    display: flex;
+  }
+
+  &-item {
+  }
+
+  &-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+
+    &-arrow {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f7f7f7;
+      border-radius: 5px;
+      border: none;
+    }
+  }
+
+  &-svg {
+    width: 40px;
+    height: 40px;
+    stroke: black;
+    fill: transparent;
+    width: 16px;
+    height: 16px;
+  }
+}

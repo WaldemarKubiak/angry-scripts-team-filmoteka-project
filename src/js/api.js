@@ -1,3 +1,5 @@
+export { API_KEY, MAIN_URL};
+
 const API_KEY = '7181a2b710caf29c7153fca4f71ab7d2';
 const MAIN_URL = 'https://api.themoviedb.org/3';
 
@@ -20,9 +22,9 @@ const MAIN_URL = 'https://api.themoviedb.org/3';
 //
 // API.getMovies(query)
 
-const getTrending = async () => {
+const getTrending = async (page=1) => {
   try {
-    const TRENDING_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`;
+    const TRENDING_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
     const response = await fetch(TRENDING_URL);
     const data = await response.json();
     return data;
