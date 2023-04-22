@@ -33,6 +33,13 @@ export function renderModal({ title, overview, poster_path, id }) {
   const modal = document.querySelector('[data-modal]');
   modal.classList.remove('backdrop--is-hidden');
 
+  const closeModalBtn = document.querySelector('[data-modal-close]');
+  // console.log(closeModalBtn);
+  closeModalBtn.addEventListener('click', () => {
+    movieModalDOM.remove();
+    modal.classList.add('backdrop--is-hidden');
+  });
+
   const addToWatchedBtn = document.querySelector('.add-to-watched-btn');
   // console.log('Hej', addToWatchedBtn);
   addToWatchedBtn.addEventListener('click', () => {
@@ -42,11 +49,4 @@ export function renderModal({ title, overview, poster_path, id }) {
   });
   const addToQueueBtn = document.querySelector('#addToQueueBtn');
   addToQueueBtn.addEventListener('click', adToLibrary.onAddToQueue(id));
-
-  const closeModalBtn = document.querySelector('[data-modal-close]');
-  // console.log(closeModalBtn);
-  closeModalBtn.addEventListener('click', () => {
-    movieModalDOM.remove();
-    modal.classList.add('backdrop--is-hidden');
-  });
 }
