@@ -3,7 +3,7 @@ import adToLibrary from './add-to-watch&queue';
 
 export function renderModal({ title, overview, poster_path, id }) {
   const movieModal = document.querySelector('.movie-modal');
-  // console.log('Render modal ID: ', id);
+  // console.log('renderModal ID: ', id);
 
   const markup = `
     <div class="movie-modal__img-container">
