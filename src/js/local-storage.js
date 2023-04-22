@@ -25,7 +25,7 @@ const LS = {
   watched,
   queue,
   getWatchedLocalStoradge,
-  getWatchedLocalStoradge,
+  setWatchedLocalStoradge,
   getQueueLocalStoradge,
   setQueueLocalStoradge,
 };
