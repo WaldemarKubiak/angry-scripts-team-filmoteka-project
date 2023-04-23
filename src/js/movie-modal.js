@@ -47,3 +47,5 @@ export function renderModal({ title, overview, poster_path, id }) {
   const addToQueueBtn = document.querySelector('#addToQueueBtn');
   addToQueueBtn.addEventListener('click', () => adToLibrary.onAddToQueue(id));
 }
+
+// asss
