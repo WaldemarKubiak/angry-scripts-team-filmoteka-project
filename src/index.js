@@ -5,3 +5,5 @@ import './js/main-section-home';
 import './js/movie-modal';
 import './js/searchByKeyword';
 import './js/pagination'
+import './js/local-storage';
+import './js/add-to-watch&queue';

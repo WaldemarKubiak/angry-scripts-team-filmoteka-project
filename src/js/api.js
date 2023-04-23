@@ -6,23 +6,22 @@ const MAIN_URL = 'https://api.themoviedb.org/3';
 //---Przykładowe zapytanie do api---///
 //---`${MAIN_URL}/movie/550?api_key=${API_KEY}`;---///
 
-// getTrending() - zaczytuje trendujące filmy z ostatniego tygodnia,
-// getMovies(query) - zaczytuje filmy wg wpisanego stringa przekazanego jako parametr,
-// getMovieByID(id) - zaczytuje dane filmu wg id,
+// getTrending(page) - zaczytuje trendujące filmy z ostatniego tygodnia
+//                     (parametr page jest opcjonalny, domyślna wartość = 1);
+// getMovies(query, page) - zaczytuje filmy wg wpisanego stringa przekazanego jako parametr
+//                     (parametr page jest opcjonalny, domyślna wartość = 1);
+// getMovieByID(id) - zaczytuje dane filmu wg id;;
 // getGenres() - zaczytuje tablicę z gatunkami filmów
-//
-// W następnej wersji do pierwszych dwóch funkcji dodam parametr page (z domyślna wartością = 1)
-// tak, aby funkcji można było użyc do paginacji
 //
 // Aby zaimportować API wpisz:
 //
 // import API from './api'
 //
-// Aby wywołąć pojedynczą funkcję wpisz np:
+// Aby wywołąć pojedynczą funkcję wpisz np.:
 //
 // API.getMovies(query)
 
-const getTrending = async (page=1) => {
+const getTrending = async (page = 1) => {
   try {
     const TRENDING_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
     const response = await fetch(TRENDING_URL);
@@ -55,9 +54,9 @@ const getMovieByID = async id => {
   }
 };
 
-const getMovies = async query => {
+const getMovies = async (query, page = 1) => {
   try {
-    const GET_MOVIES_QUERY_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}`;
+    const GET_MOVIES_QUERY_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`;
     const response = await fetch(GET_MOVIES_QUERY_URL);
     const data = await response.json();
     return data;

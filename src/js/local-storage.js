@@ -1,33 +1,33 @@
-const KEY_WATCHED = 'watched';
-const KEY_QUEUE = 'queue';
-const watched = getWatchedLocalStoradge() || [];
-const queue = getQueueLocalStoradge() || [];
+export const KEY_WATCHED = 'watched';
+export const KEY_QUEUE = 'queue';
+export const watched = getWatchedLocalStoradge() || [];
+export const queue = getQueueLocalStoradge() || [];
 
-function getWatchedLocalStoradge() {
+export function getWatchedLocalStoradge() {
   return JSON.parse(localStorage.getItem(KEY_WATCHED));
 }
 
-function getQueueLocalStoradge() {
+export function getQueueLocalStoradge() {
   return JSON.parse(localStorage.getItem(KEY_QUEUE));
 }
 
-function setWatchedLocalStoradge(arr) {
+export function setWatchedLocalStoradge(arr) {
   localStorage.setItem(KEY_WATCHED, JSON.stringify(arr));
 }
 
-function setQueueLocalStoradge(arr) {
+export function setQueueLocalStoradge(arr) {
   localStorage.setItem(KEY_QUEUE, JSON.stringify(arr));
 }
 
-const LS = {
-  KEY_WATCHED,
-  KEY_QUEUE,
-  watched,
-  queue,
-  getWatchedLocalStoradge,
-  getWatchedLocalStoradge,
-  getQueueLocalStoradge,
-  setQueueLocalStoradge,
-};
+// const LS = {
+//   KEY_WATCHED,
+//   KEY_QUEUE,
+//   watched,
+//   queue,
+//   getWatchedLocalStoradge,
+//   setWatchedLocalStoradge,
+//   getQueueLocalStoradge,
+//   setQueueLocalStoradge,
+// };
 
-export default LS;
+// export default LS;

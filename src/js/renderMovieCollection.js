@@ -23,7 +23,7 @@ const renderMovieCollection = movieCollection => {
       <div class="movie-data">
         <p class="movie-data__title">${title}</p>
         <p class="movie-data__info">
-          <span class="movie-data__genre">Drama, Action</span> |
+          <span class="movie-data__genre">Drama, Action </span> |
           <span class="movie-data__year">${new Date(release_date).getFullYear()}</span>
         </p>
       </div>
@@ -39,8 +39,11 @@ const renderMovieCollection = movieCollection => {
     movieCard.addEventListener('click', event => {
       const movieID = event.currentTarget.dataset.id;
       API.getMovieByID(movieID)
-        .then(renderModal)
-        .catch(error => console.log(error.message));
+        .then(data => {
+          console.log(data);
+          renderModal(data);
+        })
+        .catch(error => console.log(error));
     });
   });
 };
