@@ -3,7 +3,7 @@ import adToLibrary from './add-to-watch&queue';
 
 export function renderModal({ title, overview, poster_path, id }) {
   const movieModal = document.querySelector('.movie-modal');
-  // console.log('renderModal ID: ', id);
+
 
   const markup = `
     <div class="movie-modal__img-container">
@@ -27,26 +27,23 @@ export function renderModal({ title, overview, poster_path, id }) {
   movieModalDOM.classList.add('movie-modal__container');
   movieModalDOM.innerHTML = markup;
 
-  // console.log(movieModalDOM);
+ 
   movieModal.append(movieModalDOM);
 
   const modal = document.querySelector('[data-modal]');
   modal.classList.remove('backdrop--is-hidden');
 
   const closeModalBtn = document.querySelector('[data-modal-close]');
-  // console.log(closeModalBtn);
+ 
   closeModalBtn.addEventListener('click', () => {
     movieModalDOM.remove();
     modal.classList.add('backdrop--is-hidden');
   });
 
   const addToWatchedBtn = document.querySelector('.add-to-watched-btn');
-  // console.log('Hej', addToWatchedBtn);
-  addToWatchedBtn.addEventListener('click', () => {
-    // console.log('HEJ!');
-    adToLibrary.onAddToWatched(id);
-    // console.log(`Called adToLibrary.onAddToWatched(${id})`);
-  });
+  addToWatchedBtn.addEventListener('click', () => 
+    adToLibrary.onAddToWatched(id));
+  
   const addToQueueBtn = document.querySelector('#addToQueueBtn');
-  addToQueueBtn.addEventListener('click', adToLibrary.onAddToQueue(id));
+  addToQueueBtn.addEventListener('click', () => adToLibrary.onAddToQueue(id));
 }
