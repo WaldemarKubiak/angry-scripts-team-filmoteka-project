@@ -110,12 +110,11 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
   background-color: #e5e5e5;
-  transition: 2.5s, visibility 2.5s;
+  transition: 3s, visibility 3s;
 }
 
-.loader-run {
+.loader-hidden {
   opacity: 0;
   visibility: hidden;
 }
@@ -127,7 +126,7 @@ textarea {
   border: 15px solid #fff;
   border-top-color: #ff6b08;
   border-radius: 50%;
-  animation: loading 0.8s ease infinite;
+  animation: loading 0.75s ease infinite;
 }
 
 @keyframes loading {
@@ -431,6 +430,56 @@ textarea {
   border: 1px solid #ff6b08;
 }
 
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.pagination-list {
+  display: flex;
+  gap: 5px;
+}
+.pagination-item {
+  border-radius: 5px;
+}
+.pagination-item:hover {
+  background-color: #ff6b08;
+}
+.pagination-item-active {
+  background-color: #ff6b08;
+  border-radius: 5px;
+}
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.pagination-btn-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 5px;
+  border: none;
+}
+.pagination-btn-arrow:hover {
+  background-color: #ff6b08;
+}
+.pagination-svg {
+  width: 40px;
+  height: 40px;
+  stroke: black;
+  fill: transparent;
+  width: 16px;
+  height: 16px;
+}
+
 .footer {
   background-color: #f7f7f7;
   color: #545454;
@@ -486,6 +535,30 @@ textarea {
   margin-left: 10px;
   margin-right: 10px;
   fill: #ff6b08;
+  align-self: center;
+}
+
+.go-up-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.icon-up {
+  fill: #ff6b01;
+  width: 50px;
+  height: 50px;
 }
 
 .icon-up:hover,
@@ -618,12 +691,7 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: transform 750ms ease;
-  padding-top: 20px;
-}
-@media screen and (min-width: 768px) {
-  .backdrop {
-    padding-top: 216px;
-  }
+  padding: 20px;
 }
 .backdrop--is-hidden {
   display: none;
@@ -633,21 +701,12 @@ textarea {
   background: #fff;
   width: 280px;
   padding: 48px 20px 46px 20px;
-  position: relative;
 }
 @media screen and (min-width: 768px) {
   .movie-modal {
     width: 704px;
-    padding: 40px 72px 52px 36px;
+    height: 552px;
   }
-}
-.movie-modal__close-btn {
-  background-color: inherit;
-  border: none;
-  font-size: 20px;
-  position: absolute;
-  top: 16px;
-  right: 16px;
 }
 .movie-modal__container {
   display: flex;
@@ -658,7 +717,6 @@ textarea {
 @media screen and (min-width: 768px) {
   .movie-modal__container {
     flex-direction: row;
-    align-items: normal;
     gap: 68px;
   }
 }
@@ -672,13 +730,6 @@ textarea {
     width: 264px;
     height: 374px;
   }
-}
-.movie-modal__content {
-  display: flex;
-  flex-direction: column;
-  width: 264px;
-  gap: 20px;
-  color: black;
 }
 .movie-modal__title {
   font-family: "Roboto";
@@ -727,11 +778,6 @@ textarea {
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
-}
-@media screen and (min-width: 768) {
-  .button {
-    width: 125px;
-  }
 }
 .button--accent {
   border: none;

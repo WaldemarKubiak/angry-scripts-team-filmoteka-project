@@ -7,9 +7,20 @@
 
   &-list {
     display: flex;
+    gap: 5px;
   }
 
   &-item {
+    border-radius: 5px;
+    
+    &:hover {
+      background-color: $icon-color-secondary;
+    }
+    
+    &-active {
+      background-color: $icon-color-secondary;
+      border-radius: 5px;
+    }
   }
 
   &-btn {
@@ -19,7 +30,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: transparent;
 
     &-arrow {
@@ -31,6 +41,10 @@
       background: #f7f7f7;
       border-radius: 5px;
       border: none;
+
+      &:hover {
+      background-color: $icon-color-secondary;
+    }
     }
   }
 
