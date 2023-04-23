@@ -19,6 +19,22 @@ function setQueueLocalStoradge(arr) {
   localStorage.setItem(KEY_QUEUE, JSON.stringify(arr));
 }
 
+function onAddToWatched(id) {
+  if (watched.includes(id)) {
+    return;
+  }
+  watched.push(id);
+  setWatchedLocalStoradge(watched);
+}
+
+function onAddToQueue(id) {
+  if (queue.includes(id)) {
+    return;
+  }
+  queue.push(id);
+  setQueueLocalStoradge(queue);
+}
+
 const LS = {
   KEY_WATCHED,
   KEY_QUEUE,
@@ -28,6 +44,8 @@ const LS = {
   setWatchedLocalStoradge,
   getQueueLocalStoradge,
   setQueueLocalStoradge,
+  onAddToWatched,
+  onAddToQueue,
 };
 
 export default LS;
