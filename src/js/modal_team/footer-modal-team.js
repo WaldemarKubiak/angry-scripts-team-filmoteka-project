@@ -13,7 +13,7 @@ export const teamIds = [
     position: 'Team Lead',
     img: Waldemar ,
     github: 'https://github.com/WaldemarKubiak',
-    linkedin: '',
+    linkedin: 'https://linkedin.com',
     text: `”Nie można mieć wspaniałego oprogramowania bez wspaniałego zespołu.” - Jim McCarthy`,
     },
   {
@@ -21,7 +21,7 @@ export const teamIds = [
     position: 'Scrum master',
     img: Lukasz,
     github: 'https://github.com/LukaszKiwala',
-    linkedin: '',
+    linkedin: 'https://linkedin.com',
     text: '”Edukacja informatyczna nie uczyni z kogokolwiek eksperta programisty w stopniu większym niż studiowanie pędzli i pigmentów zrobi z człowieka Picassa.” - Eric S. Raymond',
     },
   {
@@ -29,7 +29,7 @@ export const teamIds = [
     position: 'Developer',
     img: Emilia ,
     github: 'https://github.com/ESZ-98',
-    linkedin: '',
+    linkedin: 'https://linkedin.com',
     text: '”Uczenie się programowania ma tyle samo wspólnego z tworzeniem interaktywnego oprogramowania, co uczenie bezwzrokowego pisania z tworzeniem poezji.” - Ted Nelson',
   },
   {
@@ -37,7 +37,7 @@ export const teamIds = [
       position: 'Developer',
       img: Piotrek,
       github:'https://github.com/PPacuk' ,
-      linkedin: '',
+      linkedin: 'https://linkedin.com',
       text: '”Większość programistów programuje nie dlatego, że spodziewają się zapłaty lub uwielbienia tłumów, ale dlatego, że programowanie jest dla nich zabawą.” - Linus Torvalds',
     },
     {
@@ -45,7 +45,7 @@ export const teamIds = [
       position: 'Developer',
       img: Karolina,
       github: 'https://github.com/karolinakiljanska',
-      linkedin: '',
+      linkedin: 'https://linkedin.com',
       text: '”Najpierw naucz się metod numerycznych i całej teorii. Następnie stwórz własny styl programowania. Następnie zapomnij o tym wszystkim i łataj kod.” - George Carrette',
     },
     {
@@ -53,7 +53,7 @@ export const teamIds = [
       position: 'Developer',
       img: Krzysztof,
       github: 'https://github.com/kadulko',
-      linkedin: '',
+      linkedin: 'https://linkedin.com',
       text: '”Jak ktoś mówi: "Chciałbym języka programowania, w którym trzeba tylko powiedzieć, co się chce osiągnąć" dajcie mu lizaka.” - Alan J. Perlis',
     },
     {
@@ -61,7 +61,7 @@ export const teamIds = [
       position: 'Developer',
       img: Mateusz,
       github: 'https://github.com/Guma96',
-      linkedin: '',
+      linkedin: 'https://linkedin.com',
       text: '”Chodzenie po wodzie i tworzenie oprogramowania wg specyfikacji są łatwe, o ile woda i specyfikacja są zamrożone” - Edward V. Berard',
     },
     {
