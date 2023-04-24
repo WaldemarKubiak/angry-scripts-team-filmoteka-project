@@ -37,3 +37,4 @@ function showQueue() {
     .catch(error => console.log(error));
 }
 export default { showWatched, showQueue };
+showWatched();
