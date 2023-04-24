@@ -3,10 +3,9 @@ import renderMovieCollection from './renderMovieCollection';
 import Pagination from 'tui-pagination';
 // import 'tui-pagination/dist/tui-pagination.css';
 
-
-export const renderPagination = ({ page = 1, total_pages }) => {
+export const renderPagination = ({ page, total_pages }) => {
   // console.log(page, total_pages);
-  localStorage.setItem(`page`,`${page}`)
+
   const options = {
     totalItems: total_pages,
     itemsPerPage: 10,
@@ -27,20 +26,41 @@ export const renderPagination = ({ page = 1, total_pages }) => {
         '<span class="pagination-item tui-page-btn tui-is-disabled tui-{{type}}">' +
         '<span class="pagination-btn tui-ico-{{type}}">{{type}}</span>' +
         '</span>',
-      moreButton:
-        '<a href="#" class="pagination-item tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="pagination-btn tui-ico-ellip">...</span>' +
-        '</a>',
+      moreButton: '<a href="#" class="pagination-item tui-page-btn tui-{{type}}-is-ellip"></a>',
     },
   };
 
   const pagination = new Pagination('pagination', options);
+
+  // pagination.on('afterMove', function (eventData) {
+  //   alert('The current page is ' + eventData.page);
+  // });
+
+  pagination.on('beforeMove', async function (eventData) {
+    console.log('localstorage', eventData.page);
+    let savePageToLocal = localStorage.setItem(`page`, `${eventData.page}`);
+    return (page = eventData.page);
+  });
 };
 
-API.getTrending(localStorage.getItem(`page`))
-  .then(data => data)
-  .then(renderPagination)
+console.log('default',localStorage.getItem(`page`));
+API.getTrending(1)
+  .then(data => {
+    renderMovieCollection(data.results);
+    renderPagination({
+      page: data.page,
+      total_pages: data.total_pages,
+    });
+  })
   .catch(error => console.error(error.message));
 
-const nextPage = document.querySelector('.tui-ico-next')
-  console.log(nextPage);
+const paginationContaier = document.querySelector('#pagination');
+
+paginationContaier.addEventListener('click', () => {
+  console.log('after click container', localStorage.getItem(`page`));
+  API.getTrending(localStorage.getItem(`page`))
+    .then(data => {
+      renderMovieCollection(data.results);
+    })
+    .catch(error => console.error(error.message));
+});
