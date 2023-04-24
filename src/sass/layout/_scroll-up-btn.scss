@@ -5,7 +5,8 @@
   justify-content: center;
   position: fixed;
   bottom: 50px;
-  right: 50px;
+  // right: 50px;
+  right: calc(2.5%);
   border-radius: 50%;
   height: 100px;
   width: 100px;
@@ -13,13 +14,13 @@
   border: none;
   cursor: pointer;
   z-index: 100;
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 2ms;
 }
 
 .icon-up {
   fill: $accent-color-btn;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 }
 
 .icon-up:hover,
@@ -33,26 +34,26 @@
   //     height: 45px;
   //   }
   .go-up-btn {
-    right: 15px;
+    right: calc(3%);
   }
 }
 
 @media screen and (min-width: 768px) {
   .icon-up {
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
   }
   .go-up-btn {
-    right: 25px;
+    right: calc(2.5%);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .icon-up {
-    width: 60px;
-    height: 60px;
+    width: 85px;
+    height: 85px;
   }
-  .go-up-btn {
-    right: 50px;
-  }
+  // .go-up-btn {
+  //   right: calc(2.5%);
+  // }
 }
