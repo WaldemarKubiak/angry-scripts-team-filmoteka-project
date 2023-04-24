@@ -1,3 +1,7 @@
+// body.modal-open {
+//   overflow-y: hidden;
+// }
+
 .backdrop {
   display: flex;
   justify-content: center;
@@ -11,7 +15,7 @@
   transition: transform 750ms ease;
   padding-top: 20px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     padding-top: 216px;
   }
 
@@ -23,12 +27,17 @@
 .movie-modal {
   background: $background-color-tertiary;
   width: 280px;
-  padding: 48px 20px 46px 20px;
+  padding: 48px 20px;
   position: relative;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     width: 704px;
     padding: 40px 72px 52px 36px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 806px;
+    padding: 40px 12px;
   }
 
   &__close-btn {
@@ -46,10 +55,14 @@
     align-items: center;
     gap: 20px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       flex-direction: row;
       align-items: normal;
       gap: 68px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      gap: 30px;
     }
   }
 
@@ -57,20 +70,34 @@
     width: 100%;
     height: auto;
     border-radius: 5px;
+    background-image: url(/src/images/imageonline-co-placeholder-image.jpg);
+    background-size: contain;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       width: 264px;
       height: 374px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 375px;
+      height: 478px;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    width: 264px;
 
     gap: 20px;
     color: black;
+
+    @media screen and (min-width: $tablet) {
+      width: 264px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 447px;
+    }
   }
 
   &__title {
@@ -81,9 +108,34 @@
     line-height: 23px;
     text-transform: uppercase;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablet) {
       font-size: 20px;
       line-height: 23px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 30px;
+      line-height: 35px;
+    }
+  }
+
+  &__table {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+
+    & tr {
+      height: 24px;
+    }
+
+    &-caption {
+      width: 118 px;
+      color: $font-color-alternative;
+
+      @media screen and (min-width: $desktop) {
+        width: 152px;
+      }
     }
   }
 
@@ -112,29 +164,31 @@
   align-items: center;
   width: 110px;
   height: 44px;
+  padding: 6px 12px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  display: flex;
   align-items: center;
-  text-align: center;
   text-transform: uppercase;
   border: 1px solid #000000;
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
 
-  @media screen and (min-width: 768) {
+  @media screen and (min-width: $tablet) {
     width: 125px;
   }
 
-  &--accent {
+  @media screen and (min-width: $desktop) {
+    width: 136px;
+  }
+
+  &:hover {
     border: none;
     background: $accent-color-btn;
     color: white;
-    padding: 6px 20px;
   }
 }
 
