@@ -33,6 +33,9 @@
     }
   }
 }
+.header-library__logo {
+  margin-left: -10px;
+}
 .header-library__content {
   display: flex;
   align-items: center;
@@ -40,25 +43,23 @@
 }
 .header-library__logo-link {
   text-decoration: none;
+  gap: 10px;
 }
 
 .header-library__logo-icon {
-  margin-left: 20px;
   fill: transparent;
   stroke: white;
   width: 24px;
   height: 24px;
 }
 .header-library__logo-link {
-  padding: 0;
   background-color: inherit;
   fill: currentColor;
   border: none;
   cursor: pointer;
   display: flex;
-  margin-top: 42px;
+  margin-top: 40px;
   align-items: center;
-  gap: 10px;
 }
 .header-library__logotext {
   display: none;
@@ -72,26 +73,22 @@
   color: $font-color-primary;
   @media screen and (min-width: 768px) {
     display: flex;
-    margin-left: 10px;
   }
 }
 .header-library__navigation {
   display: flex;
   align-items: center;
   list-style: none;
-  margin-top: 40px;
+  padding-top: 40px;
+  gap: 40px;
+  margin-right: 10px;
 }
 
 .header-library__navigation-item:last-child {
-  margin-right: 20px;
   @media screen and (min-width: 768px) {
-    margin-right: 32px;
   }
 }
 
-.header-library__navigation-item:first-child {
-  margin-right: 39px;
-}
 .header-library__navigation-link {
   text-decoration: none;
   text-transform: uppercase;
@@ -146,6 +143,7 @@
   background-color: $accent-color;
   border: 1px solid $accent-color;
 }
+
 .night-mode-button {
   position: absolute;
   top: 20px;
@@ -154,4 +152,9 @@
 .night-mode {
   background-color: #222;
   color: #fff;
+
+.btn-active {
+  background-color: #ff6b01;
+  box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+  border: #ff6b01;
 }

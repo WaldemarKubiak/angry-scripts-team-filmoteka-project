@@ -14,7 +14,12 @@ import API from './api';
 import { renderModal } from './movie-modal';
 
 const renderMovieCollection = movieCollection => {
+  // console.log(movieCollection);
   const movieCollectionDOM = document.querySelector('.movie-collection');
+
+  const { id, title, poster_path, release_date } = movieCollection;
+
+  // console.log(movieCollectionDOM);
 
   const markup = movieCollection
     .map(
@@ -38,6 +43,7 @@ const renderMovieCollection = movieCollection => {
 `,
     )
     .join('');
+  // console.log(markup);
 
   movieCollectionDOM.innerHTML = markup;
 
