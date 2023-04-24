@@ -1,12 +1,8 @@
-///---to jako import!!!---///
-
-const API_KEY = '7181a2b710caf29c7153fca4f71ab7d2';
-const MAIN_URL = 'https://api.themoviedb.org/3';
-
+import { API_KEY, MAIN_URL } from './api';
 const searchInput = document.querySelector('.header-input');
 const searchForm = document.querySelector('.header-form');
 const movieList = document.querySelector('.movie-list');
-///----Tu zrobić import---////
+
 import renderMovieCollection from './renderMovieCollection.js';
 
 const searchByKeyword = query => {
