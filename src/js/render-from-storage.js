@@ -3,6 +3,7 @@ import renderMovieCollection from './renderMovieCollection';
 import { getWatchedLocalStorage, getQueueLocalStorage } from './local-storage';
 import API from './api';
 import './movie-modal';
+import './modal_team/footer-modal';
 const refs = {
   watchedRef: document.querySelector('#watched-btn'),
   queueRef: document.querySelector('#queue-btn'),
