@@ -3,29 +3,140 @@
  * Główny plik dla stylów.
  * Wszystkie partials podłączamy tutaj.
  */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #000;
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  outline: none;
+  color: inherit;
+}
+
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+label,
+input,
+textarea {
+  display: block;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
   min-width: 320px;
   padding: 0 20px;
-  /*
-  @media screen and (min-width: 480px) {
-    // width: 480px; //wyłączone, do tst - gdy nie zatrybi pow. min-width: 320px
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
   }
-  */
 }
 @media screen and (min-width: 768px) {
   .container {
+    width: 768px;
     padding: 0 32px;
   }
 }
 @media screen and (min-width: 1280px) {
   .container {
-    max-width: 1280px;
+    width: 1280px;
     padding: 0 32px;
   }
 }
 
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5e5e5;
+  transition: 3s, visibility 3s;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: "";
+  width: 95px;
+  height: 95px;
+  border: 15px solid #fff;
+  border-top-color: #ff6b08;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
 .header {
   background-image: url(/src/images/phone/home-header-phone.jpg);
   background-size: cover;
@@ -43,7 +154,6 @@
 .header-list {
   display: flex;
   gap: 40px;
-  margin-right: 20px;
   color: #fff;
   font-family: "Roboto";
   font-style: normal;
@@ -53,6 +163,9 @@
   text-align: center;
   text-transform: uppercase;
 }
+.header-item-isActive {
+  border-bottom: 3px solid #ff001b;
+}
 .header-form {
   display: flex;
   justify-content: center;
@@ -60,7 +173,6 @@
   top: 56px;
 }
 .header-logo {
-  margin-left: 20px;
   fill: transparent;
   stroke: #fff;
   width: 24px;
@@ -72,6 +184,7 @@
 .header-label {
   border-bottom: 0.5px solid;
   border-bottom-color: #e5e5e5;
+  display: flex;
 }
 .header-input {
   background-color: transparent;
@@ -79,6 +192,11 @@
   outline: none;
   color: #fff;
   width: 260px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
 }
 .header-input::-moz-placeholder {
   color: #fff;
@@ -112,9 +230,6 @@
   .header-input {
     width: 316px;
   }
-  .header-logo {
-    margin-left: 32px;
-  }
   .header-logoWrapper {
     display: flex;
     align-items: center;
@@ -130,9 +245,6 @@
     align-items: center;
     text-align: center;
     color: #fff;
-  }
-  .header-list {
-    margin-right: 40px;
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
@@ -154,40 +266,37 @@
   }
 }
 .header-library {
-  height: 216px;
+  height: 230px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/mob-background-library-1x.jpg);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/phone/my-library-header-phone.jpg);
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .header-library {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/mob-background-library-2x.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/phone/my-library-header-phone@2x.jpg);
   }
 }
 @media screen and (min-width: 768px) {
   .header-library {
-    height: 220px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/tab-background-library-1x.jpg);
+    height: 219px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/tablet/my-library-header-tablet.jpg);
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .header-library {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/tab-background-library-2x.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/desktop/my-library-header-desktop@2x.jpg);
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .header-library {
-    width: 1024px;
-    height: 215px;
-    padding-left: 71px;
-    padding-right: 71px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/desk-background-library-1x.jpg);
+    height: 216px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/desktop/my-library-header-desktop.jpg);
   }
 }
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1280px) and (min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1280px) and (min-resolution: 192dpi), screen and (min-width: 1280px) and (min-resolution: 2dppx) {
   .header-library {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/desk-background-library-2x.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url(../images/desktop/my-library-header-desktop@2x.jpg);
   }
 }
 
@@ -201,6 +310,26 @@
   text-decoration: none;
 }
 
+.header-library__logo-icon {
+  margin-left: 20px;
+  fill: transparent;
+  stroke: white;
+  width: 24px;
+  height: 24px;
+}
+
+.header-library__logo-link {
+  padding: 0;
+  background-color: inherit;
+  fill: currentColor;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  margin-top: 42px;
+  align-items: center;
+  gap: 10px;
+}
+
 .header-library__logotext {
   display: none;
   text-decoration: none;
@@ -210,7 +339,7 @@
   line-height: 35px;
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .header-library__logotext {
@@ -238,11 +367,6 @@
 .header-library__navigation-item:first-child {
   margin-right: 39px;
 }
-@media screen and (min-width: 768px) {
-  .header-library__navigation-item:first-child {
-    margin-right: 141px;
-  }
-}
 
 .header-library__navigation-link {
   text-decoration: none;
@@ -252,8 +376,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-  text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
 }
 
@@ -263,9 +386,8 @@
 
 .header-library__button-section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-right: 40px;
+  align-items: center;
 }
 
 .header-library__button-list {
@@ -303,6 +425,61 @@
   border: 1px solid #ff6b08;
 }
 
+.header-library__button-list-item:focus {
+  background-color: #ff6b08;
+  border: 1px solid #ff6b08;
+}
+
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.pagination-list {
+  display: flex;
+  gap: 5px;
+}
+.pagination-item {
+  border-radius: 5px;
+}
+.pagination-item:hover {
+  background-color: #ff6b08;
+}
+.pagination-item-active {
+  background-color: #ff6b08;
+  border-radius: 5px;
+}
+.pagination-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.pagination-btn-arrow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 5px;
+  border: none;
+}
+.pagination-btn-arrow:hover {
+  background-color: #ff6b08;
+}
+.pagination-svg {
+  width: 40px;
+  height: 40px;
+  stroke: black;
+  fill: transparent;
+  width: 16px;
+  height: 16px;
+}
+
 .footer {
   background-color: #f7f7f7;
   color: #545454;
@@ -312,21 +489,45 @@
   line-height: 1.14;
   padding-top: 29px;
   padding-bottom: 30px;
+  font-weight: 400;
   font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .footer {
     font-size: 16px;
     line-height: 1.19;
     padding-top: 30px;
-    padding-bottom: 30px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   .footer {
-    padding-top: 30px;
     padding-bottom: 28px;
   }
+}
+@media screen and (min-width: 768px) {
+  .footer__box {
+    display: flex;
+  }
+}
+.footer__info {
+  display: inline-flex;
+}
+.footer__info--divide {
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .footer__info--divide {
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+}
+.footer__info--students {
+  margin-left: 5px;
+  text-decoration: underline;
+  color: #545454;
 }
 .footer__svg {
   width: 14px;
@@ -334,14 +535,84 @@
   margin-left: 10px;
   margin-right: 10px;
   fill: #ff6b08;
-}
-.footer__students {
-  text-decoration: underline;
-  color: #545454;
+  align-self: center;
 }
 
+.go-up-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.icon-up {
+  fill: #ff6b01;
+  width: 50px;
+  height: 50px;
+}
+
+.icon-up:hover,
+.icon-up:focus {
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 480px) {
+  .go-up-btn {
+    right: 15px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .icon-up {
+    width: 40px;
+    height: 40px;
+  }
+  .go-up-btn {
+    right: 25px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .icon-up {
+    width: 60px;
+    height: 60px;
+  }
+  .go-up-btn {
+    right: 50px;
+  }
+}
 .movie-data > p {
   margin: 0px;
+}
+
+.movie-collection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .movie-collection {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 59px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .movie-collection {
+    gap: 15px;
+    padding-top: 44px;
+  }
 }
 
 .movie-card {
@@ -354,10 +625,11 @@
     height: 495px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .movie-card {
     width: 395px;
     height: 634px;
+    margin-top: 16px;
   }
 }
 .movie-card__img {
@@ -372,10 +644,14 @@
     height: 455px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .movie-card__img {
     height: 574px;
   }
+}
+.movie-card:hover {
+  cursor: pointer;
+  opacity: 90%;
 }
 
 .movie-data {
@@ -388,7 +664,7 @@
   line-height: 16px;
   padding-top: 10px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .movie-data {
     height: 60px;
     padding-top: 12px;
@@ -402,4 +678,125 @@
 }
 .movie-data__info {
   color: #ff6b08;
+}
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform 750ms ease;
+  padding: 20px;
+}
+.backdrop--is-hidden {
+  display: none;
+}
+
+.movie-modal {
+  background: #fff;
+  width: 280px;
+  padding: 48px 20px 46px 20px;
+}
+@media screen and (min-width: 768px) {
+  .movie-modal {
+    width: 704px;
+    height: 552px;
+  }
+}
+.movie-modal__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (min-width: 768px) {
+  .movie-modal__container {
+    flex-direction: row;
+    gap: 68px;
+  }
+}
+.movie-modal__img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+@media screen and (min-width: 768px) {
+  .movie-modal__img {
+    width: 264px;
+    height: 374px;
+  }
+}
+.movie-modal__title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+}
+@media screen and (min-width: 768px) {
+  .movie-modal__title {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
+.movie-modal__about {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+.movie-modal__about-header {
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+.movie-modal__overview {
+  line-height: 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110px;
+  height: 44px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #000000;
+}
+.button--accent {
+  border: none;
+  background: #ff6b01;
+  color: white;
+  padding: 6px 20px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 480px) {
+  .btn-wrapper {
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 768) {
+  .btn-wrapper {
+    gap: 15px;
+  }
 }/*# sourceMappingURL=main.css.map */
