@@ -77,18 +77,12 @@ e.preventDefault();
   refsModal.body.addEventListener('keydown', onEscCloseModal);
   refsModal.modal.addEventListener('click', onBackdropCloseModal);
   refsModal.modal.classList.add('shown');
-  lockBodyScroll();
-
-  removeButtonToTop()
 }
 
 function onCloseModal ()  {
     refsModal.modal.classList.remove('shown');
     refsModal.body.removeEventListener('Keydown', onEscCloseModal);
     refsModal.modal.removeEventListener('click', onBackdropCloseModal);
-    lockBodyScroll();
-
-    createButtonToTop()
 }
 
 function onEscCloseModal(e) {
