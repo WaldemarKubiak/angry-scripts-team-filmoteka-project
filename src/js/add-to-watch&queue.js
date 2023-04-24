@@ -1,23 +1,23 @@
-import { watched, queue, setWatchedLocalStoradge, setQueueLocalStoradge } from './local-storage';
-
+import {
+  getWatchedLocalStorage,
+  getQueueLocalStorage,
+  setWatchedLocalStorage,
+  setQueueLocalStorage,
+} from './local-storage';
 function onAddToWatched(id) {
+  const watched = getWatchedLocalStorage();
   if (watched.includes(id)) {
     return;
   }
   watched.push(id);
-  setWatchedLocalStoradge(watched);
+  setWatchedLocalStorage(watched);
 }
-
 function onAddToQueue(id) {
+  const queue = getQueueLocalStorage();
   if (queue.includes(id)) {
     return;
   }
   queue.push(id);
-  setQueueLocalStoradge(queue);
+  setQueueLocalStorage(queue);
 }
-
-const adToLibrary = {
-  onAddToWatched,
-  onAddToQueue,
-};
-export default adToLibrary;
+export default { onAddToWatched, onAddToQueue };
