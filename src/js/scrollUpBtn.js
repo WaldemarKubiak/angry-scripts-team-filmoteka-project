@@ -15,5 +15,5 @@ goUpBtn.addEventListener('click', () => {
     top: 0,
     left: 0,
     behavior: 'smooth',
-  });git 
+  });
 });
