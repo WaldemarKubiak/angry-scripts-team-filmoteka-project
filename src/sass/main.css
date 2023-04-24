@@ -110,11 +110,12 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
   background-color: #e5e5e5;
-  transition: 3s, visibility 3s;
+  transition: 2.5s, visibility 2.5s;
 }
 
-.loader-hidden {
+.loader-run {
   opacity: 0;
   visibility: hidden;
 }
@@ -126,7 +127,7 @@ textarea {
   border: 15px solid #fff;
   border-top-color: #ff6b08;
   border-radius: 50%;
-  animation: loading 0.75s ease infinite;
+  animation: loading 0.8s ease infinite;
 }
 
 @keyframes loading {
@@ -435,21 +436,13 @@ textarea {
   justify-content: center;
   margin-top: 40px;
 }
-.pagination-list {
+
+.tui-pagination {
   display: flex;
   gap: 5px;
 }
-.pagination-item {
+.tui-page-btn {
   border-radius: 5px;
-}
-.pagination-item:hover {
-  background-color: #ff6b08;
-}
-.pagination-item-active {
-  background-color: #ff6b08;
-  border-radius: 5px;
-}
-.pagination-btn {
   width: 40px;
   height: 40px;
   border: none;
@@ -458,26 +451,29 @@ textarea {
   align-items: center;
   background-color: transparent;
 }
-.pagination-btn-arrow {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #f7f7f7;
-  border-radius: 5px;
-  border: none;
-}
-.pagination-btn-arrow:hover {
+.tui-page-btn:hover {
   background-color: #ff6b08;
 }
-.pagination-svg {
-  width: 40px;
-  height: 40px;
-  stroke: black;
-  fill: transparent;
-  width: 16px;
-  height: 16px;
+.tui-last {
+  display: none;
+}
+.tui-first {
+  display: none;
+}
+.tui-prev-is-ellip {
+  display: none;
+}
+.tui-next-is-ellip {
+  display: none;
+}
+.tui-prev {
+  background-color: #F7F7F7;
+}
+.tui-next {
+  background-color: #F7F7F7;
+}
+.tui-is-selected {
+  background-color: #ff6b08;
 }
 
 .footer {
@@ -691,7 +687,12 @@ textarea {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: transform 750ms ease;
-  padding: 20px;
+  padding-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .backdrop {
+    padding-top: 216px;
+  }
 }
 .backdrop--is-hidden {
   display: none;
@@ -701,12 +702,21 @@ textarea {
   background: #fff;
   width: 280px;
   padding: 48px 20px 46px 20px;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .movie-modal {
     width: 704px;
-    height: 552px;
+    padding: 40px 72px 52px 36px;
   }
+}
+.movie-modal__close-btn {
+  background-color: inherit;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 .movie-modal__container {
   display: flex;
@@ -717,6 +727,7 @@ textarea {
 @media screen and (min-width: 768px) {
   .movie-modal__container {
     flex-direction: row;
+    align-items: normal;
     gap: 68px;
   }
 }
@@ -730,6 +741,13 @@ textarea {
     width: 264px;
     height: 374px;
   }
+}
+.movie-modal__content {
+  display: flex;
+  flex-direction: column;
+  width: 264px;
+  gap: 20px;
+  color: black;
 }
 .movie-modal__title {
   font-family: "Roboto";
@@ -778,6 +796,11 @@ textarea {
   border-radius: 5px;
   background: #ffffff;
   color: #000000;
+}
+@media screen and (min-width: 768) {
+  .button {
+    width: 125px;
+  }
 }
 .button--accent {
   border: none;
