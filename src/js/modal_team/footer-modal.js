@@ -3,8 +3,9 @@ import Siema from 'siema';
 
 export const refs = {
   workerList: document.querySelector('.worker__list'),
-}
+  
 
+}
 const setting = {
     selector: '.siema_one',
     duration: 200,
