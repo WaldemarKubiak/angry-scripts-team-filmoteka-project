@@ -7,5 +7,6 @@ import './js/searchByKeyword';
 import './js/pagination';
 import './js/local-storage';
 import './js/add-to-watch&queue';
+import './js/render-from-storage';
 import './js/modal_team/footer-modal';
 import './js/night-mode';
