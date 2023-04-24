@@ -43,7 +43,9 @@
     height: 398px;
     border-radius: 5px;
     display: block;
-    background: lightgrey;
+    transition: all 0.1s ease-in;
+    background-image: url(/src/images/imageonline-co-placeholder-image.jpg);
+    background-size: contain;
 
     @media screen and (min-width: 768px) {
       height: 455px;
@@ -56,7 +58,12 @@
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:hover img {
     opacity: 90%;
+    transform: scale(1.01);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
 }
 
@@ -83,5 +90,27 @@
   }
   &__info {
     color: $font-color-accent;
+  }
+
+  &__vote {
+    display: inline-block;
+    width: 36px;
+    height: 16px;
+    background: #ff6b01;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    line-height: 17px;
+
+    @media screen and (min-width: $desktop) {
+      width: 40px;
+      height: 20px;
+      font-size: 12px;
+      line-height: 23px;
+    }
+
+    &--is-hidden {
+      display: none;
+    }
   }
 }
