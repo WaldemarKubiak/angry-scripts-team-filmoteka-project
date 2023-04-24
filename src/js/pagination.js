@@ -1,15 +1,11 @@
 import API from './api';
 import renderMovieCollection from './renderMovieCollection';
 import Pagination from 'tui-pagination';
-// import 'tui-pagination/dist/tui-pagination.css';
 
-
-export const renderPagination = ({ page = 1, total_pages }) => {
-  // console.log(page, total_pages);
-  localStorage.setItem(`page`,`${page}`)
+export const renderPagination = ({ page, total_pages }) => {
   const options = {
     totalItems: total_pages,
-    itemsPerPage: 10,
+    itemsPerPage: 1,
     visiblePages: 5,
     page: page,
     centerAlign: true,
@@ -28,19 +24,28 @@ export const renderPagination = ({ page = 1, total_pages }) => {
         '<span class="pagination-btn tui-ico-{{type}}">{{type}}</span>' +
         '</span>',
       moreButton:
-        '<a href="#" class="pagination-item tui-page-btn tui-{{type}}-is-ellip">' +
-        '<span class="pagination-btn tui-ico-ellip">...</span>' +
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
         '</a>',
     },
   };
 
   const pagination = new Pagination('pagination', options);
+  pagination.on('beforeMove', async function (eventData) {
+    API.getTrending(eventData.page)
+      .then(data => {
+        renderMovieCollection(data.results);
+      })
+      .catch(error => console.error(error.message));
+  });
 };
 
-API.getTrending(localStorage.getItem(`page`))
-  .then(data => data)
-  .then(renderPagination)
+API.getTrending(1)
+  .then(data => {
+    renderMovieCollection(data.results);
+    renderPagination({
+      page: data.page,
+      total_pages: data.total_pages,
+    });
+  })
   .catch(error => console.error(error.message));
-
-const nextPage = document.querySelector('.tui-ico-next')
-  console.log(nextPage);
