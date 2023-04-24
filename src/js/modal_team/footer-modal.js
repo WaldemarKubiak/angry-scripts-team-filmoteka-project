@@ -1,5 +1,5 @@
 import { teamIds }  from '/src/js/modal_team/footer-modal-team.js';
-// import Siema from 'siema';
+import Siema from 'siema';
 
 export const refs = {
   workerList: document.querySelector('.worker__list'),
