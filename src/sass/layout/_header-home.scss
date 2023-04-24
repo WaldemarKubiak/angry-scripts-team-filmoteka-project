@@ -153,21 +153,12 @@
     }
   }
 }
-.night-mode-button {
+.no-results {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  color: red;
+  margin-top: 20px;
+  display: none;
 }
-.night-mode {
-  background-color: #222;
-  color: #fff;
-}
-
-.night-mode .header-logoText {
-  color: #fff;
-}
-
-.night-mode .night-mode-button {
-  background-color: #333;
-  color: #fff;
+.no-results.active {
+  display: block;
 }
