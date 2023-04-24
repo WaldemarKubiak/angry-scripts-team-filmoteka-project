@@ -18,7 +18,7 @@ export const teamIds = [
     },
   {
     name: 'Łukasz Kiwała',
-    position: 'Scrum master',
+    position: 'Scrum Master',
     img: Lukasz,
     github: 'https://github.com/LukaszKiwala',
     linkedin: 'https://linkedin.com',
