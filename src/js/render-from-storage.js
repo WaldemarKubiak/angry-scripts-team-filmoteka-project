@@ -4,17 +4,22 @@ import { getWatchedLocalStorage, getQueueLocalStorage } from './local-storage';
 import API from './api';
 import './movie-modal';
 import './modal_team/footer-modal';
-const refs = {
-  watchedRef: document.querySelector('#watched-btn'),
-  queueRef: document.querySelector('#queue-btn'),
-  movieCollectionDOM: document.querySelector('.movie-collection'),
-};
-refs.watchedRef.addEventListener('click', showWatched);
-refs.queueRef.addEventListener('click', showQueue);
+
+const watchedRef = document.querySelector('#watched-btn');
+const queueRef = document.querySelector('#queue-btn');
+const movieCollectionDOM = document.querySelector('.movie-collection');
+
+if (watchedRef) {
+  watchedRef.addEventListener('click', showWatched);
+}
+if (queueRef) {
+  queueRef.addEventListener('click', showQueue);
+}
+
 function showWatched() {
   const watched = getWatchedLocalStorage();
   if (watched.length === 0) {
-    refs.movieCollectionDOM.innerHTML = `
+    movieCollectionDOM.innerHTML = `
       <li class="nothing">
         <img src="${nothing}" alt="There's nothing to see here" />
       </li>`;
@@ -27,7 +32,7 @@ function showWatched() {
 function showQueue() {
   const queue = getQueueLocalStorage();
   if (queue.length === 0) {
-    refs.movieCollectionDOM.innerHTML = `
+    movieCollectionDOM.innerHTML = `
       <li class="nothing">
         <img src="${nothing}" alt="There's nothing to see here" />
       </li>`;
