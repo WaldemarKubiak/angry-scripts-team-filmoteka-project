@@ -21,20 +21,20 @@ const MAIN_URL = 'https://api.themoviedb.org/3';
 //
 // API.getMovies(query)
 
-const getTrending = async (page = 1) => {
-  try {
-    const TRENDING_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
-    const response = await fetch(TRENDING_URL);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error.message);
-  }
+const getTrending = async page => {
+  const response = await fetch(`${MAIN_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`);
+  return response.json();
+};
+const searchMovies = async (query, page) => {
+  const response = await fetch(
+    `${MAIN_URL}/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`,
+  );
+  return response.json();
 };
 
 const getGenres = async () => {
   try {
-    const GENRES_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
+    const GENRES_URL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${page}`;
     const response = await fetch(GENRES_URL);
     const data = await response.json();
     return data;
@@ -65,5 +65,5 @@ const getMovies = async (query, page = 1) => {
   }
 };
 
-const API = { getTrending, getMovieByID, getMovies, getGenres };
+const API = { getTrending, getMovieByID, getMovies, getGenres, searchMovies };
 export default API;
