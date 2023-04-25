@@ -26,7 +26,10 @@ function showWatched() {
     return;
   }
   Promise.all(watched.map(id => API.getMovieByID(id)))
-    .then(movies => renderMovieCollection(movies))
+    .then(movies => {
+      movies.forEach(movie => (movie.genre_ids = movie.genres.map(genre => genre.id)));
+      renderMovieCollection(movies);
+    })
     .catch(error => console.log(error));
 }
 function showQueue() {
@@ -39,7 +42,10 @@ function showQueue() {
     return;
   }
   Promise.all(queue.map(id => API.getMovieByID(id)))
-    .then(movies => renderMovieCollection(movies))
+    .then(movies => {
+      movies.forEach(movie => (movie.genre_ids = movie.genres.map(genre => genre.id)));
+      renderMovieCollection(movies);
+    })
     .catch(error => console.log(error));
 }
 showWatched();
