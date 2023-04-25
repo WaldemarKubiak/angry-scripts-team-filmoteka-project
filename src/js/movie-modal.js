@@ -62,6 +62,12 @@ export function renderModal({
   const modal = document.querySelector('[data-modal]');
   modal.classList.remove('backdrop--is-hidden');
 
+  body.removeEventListener('Keydown', onEscCloseModal); 
+  function onEscCloseModal(e) {
+    if (e.keyCode === 27) {
+        onCloseModal();
+    }
+}
   const closeModalBtn = document.querySelector('[data-modal-close]');
 
   closeModalBtn.addEventListener('click', () => {
@@ -77,4 +83,4 @@ export function renderModal({
   addToQueueBtn.addEventListener('click', () => adToLibrary.onAddToQueue(id));
 }
 
-// asss
+
