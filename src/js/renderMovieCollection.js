@@ -10,14 +10,13 @@
 //
 // import renderMovieCollection from './renderMovieCollection';
 
+import { stringifyGenres } from './genres';
 import API from './api';
 import { renderModal } from './movie-modal';
 
 const renderMovieCollection = movieCollection => {
   // console.log(movieCollection);
   const movieCollectionDOM = document.querySelector('.movie-collection');
-
-  const { id, title, poster_path, release_date } = movieCollection;
 
   // console.log(movieCollectionDOM);
 
@@ -29,12 +28,13 @@ const renderMovieCollection = movieCollection => {
         poster_path,
         release_date,
         vote_average,
+        genre_ids,
       }) => `<div class="movie-card" data-id="${id}">
       <img src="https://image.tmdb.org/t/p/w400${poster_path}" alt="" class="movie-card__img"/>
       <div class="movie-data">
         <p class="movie-data__title">${title}</p>
         <p class="movie-data__info">
-          <span class="movie-data__genre">Drama, Action </span> |
+          <span class="movie-data__genre">${stringifyGenres(genre_ids)}</span> |
           <span class="movie-data__year">${new Date(release_date).getFullYear()}</span>
           <span class = "movie-data__vote">${(Math.round(vote_average * 10) / 10).toFixed(1)}</span>
         </p>
@@ -43,7 +43,7 @@ const renderMovieCollection = movieCollection => {
 `,
     )
     .join('');
-  // console.log(markup);
+  // console.log(markup); ${stringifyGenres(genres)}
 
   movieCollectionDOM.innerHTML = markup;
 
@@ -53,7 +53,7 @@ const renderMovieCollection = movieCollection => {
       const movieID = event.currentTarget.dataset.id;
       API.getMovieByID(movieID)
         .then(data => {
-          // console.log(data);
+          console.log(data);
           renderModal(data);
         })
         .catch(error => console.log(error));
