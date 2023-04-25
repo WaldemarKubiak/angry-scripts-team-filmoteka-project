@@ -10,3 +10,4 @@ import './js/add-to-watch&queue';
 
 import './js/modal_team/footer-modal';
 import './js/night-mode';
+import './js/genres';

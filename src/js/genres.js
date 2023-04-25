@@ -19,3 +19,12 @@ export const genres = [
   { id: 10752, name: 'War' },
   { id: 37, name: 'Western' },
 ];
+
+const NUMBER_OF_GENRES_SHOWN = 2;
+
+export const stringifyGenres = genreIdArr =>
+  genreIdArr
+    .map(id => genres.find(genre => genre.id == id))
+    .map(genre => genre.name)
+    .filter((genre, index) => index < NUMBER_OF_GENRES_SHOWN)
+    .join(', ');

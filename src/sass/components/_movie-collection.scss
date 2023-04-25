@@ -87,6 +87,9 @@
   &__title {
     color: $font-color-secondary;
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__info {
     color: $font-color-accent;
