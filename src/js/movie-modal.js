@@ -65,9 +65,13 @@ export function renderModal({
   body.removeEventListener('Keydown', onEscCloseModal); 
   function onEscCloseModal(e) {
     if (e.keyCode === 27) {
-        onEscCloseModal();
+      movieModalDOM.remove();
+      modal.classList.add('backdrop--is-hidden');
+      body.classList.remove('modal-open');
     }
-}
+  }
+  
+  document.addEventListener('keydown', onEscCloseModal);
   const closeModalBtn = document.querySelector('[data-modal-close]');
 
   closeModalBtn.addEventListener('click', () => {
