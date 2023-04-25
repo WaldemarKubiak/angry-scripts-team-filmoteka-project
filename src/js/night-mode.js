@@ -1,7 +1,5 @@
-const switchButton = document.querySelector('.switch-button');
+const darkModeBtn = document.querySelector('.header-darkmode-btn');
 
-switchButton.addEventListener('click', function () {
-  console.log('Button clicked!'); // dodany console.log
-  document.body.classList.toggle('night-mode');
-  switchButton.classList.toggle('night-mode');
+darkModeBtn.addEventListener('click', function () {
+  document.body.classList.toggle('dark');
 });
