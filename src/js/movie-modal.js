@@ -1,4 +1,5 @@
 import API from './api';
+import { stringifyGenres } from './genres';
 import adToLibrary from './add-to-watch&queue';
 
 export function renderModal({
@@ -10,6 +11,7 @@ export function renderModal({
   id,
   vote_average,
   vote_count,
+  genres,
 }) {
   const body = document.querySelector('body');
   body.classList.add('modal-open');
@@ -37,7 +39,7 @@ export function renderModal({
         </tr>
         <tr>
           <td class="movie-modal__table-caption">Genre</td>
-          <td>Western</td>
+          <td>${stringifyGenres(genres.map(genre => genre.id))}</td>
         </tr>
       </table>
       <div class="movie-modal__about">
