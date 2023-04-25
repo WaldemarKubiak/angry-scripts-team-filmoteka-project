@@ -1,5 +1,5 @@
-const nightModeButton = document.querySelector('.night-mode-button');
+const darkModeBtn = document.querySelector('.header-darkmode-btn');
 
-nightModeButton.addEventListener('click', function () {
-  document.body.classList.toggle('night-mode');
+darkModeBtn.addEventListener('click', function () {
+  document.body.classList.toggle('dark');
 });
