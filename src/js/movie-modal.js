@@ -65,7 +65,7 @@ export function renderModal({
   body.removeEventListener('Keydown', onEscCloseModal); 
   function onEscCloseModal(e) {
     if (e.keyCode === 27) {
-        onCloseModal();
+        onEscCloseModal();
     }
 }
   const closeModalBtn = document.querySelector('[data-modal-close]');
