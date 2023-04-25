@@ -15,10 +15,7 @@ import API from './api';
 import { renderModal } from './movie-modal';
 
 const renderMovieCollection = movieCollection => {
-  // console.log(movieCollection);
   const movieCollectionDOM = document.querySelector('.movie-collection');
-
-  // console.log(movieCollectionDOM);
 
   const markup = movieCollection
     .map(
@@ -53,7 +50,6 @@ const renderMovieCollection = movieCollection => {
       const movieID = event.currentTarget.dataset.id;
       API.getMovieByID(movieID)
         .then(data => {
-          console.log(data);
           renderModal(data);
         })
         .catch(error => console.log(error));
