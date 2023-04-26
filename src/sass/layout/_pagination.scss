@@ -4,60 +4,6 @@
     justify-content: center;
     margin-top: 40px;
   }
-
-  //   &-list {
-  //     display: flex;
-  //     gap: 5px;
-
-  //   }
-
-  //   &-item {
-  //     border-radius: 5px;
-
-  //     &:hover {
-  //       background-color: $icon-color-secondary;
-  //     }
-
-  //     &-active {
-  //       background-color: $icon-color-secondary;
-  //       border-radius: 5px;
-  //     }
-  //   }
-
-  //   &-btn {
-  //     width: 40px;
-  //     height: 40px;
-  //     border: none;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     background-color: transparent;
-
-  //     &-arrow {
-  //       width: 40px;
-  //       height: 40px;
-  //       display: flex;
-  //       justify-content: center;
-  //       align-items: center;
-  //       background: #f7f7f7;
-  //       border-radius: 5px;
-  //       border: none;
-  //       display: none;
-
-  //       &:hover {
-  //       background-color: $icon-color-secondary;
-  //     }
-  //     }
-  //   }
-
-  //   &-svg {
-  //     width: 40px;
-  //     height: 40px;
-  //     stroke: black;
-  //     fill: transparent;
-  //     width: 16px;
-  //     height: 16px;
-  //   }
 }
 .tui {
   &-pagination {
@@ -78,25 +24,56 @@
       background-color: $icon-color-secondary;
     }
   }
-  &-last{
-    display: none
+  &-last {
+    display: none;
   }
-  &-first{
-    display: none
+  &-first {
+    display: none;
   }
-  &-prev-is-ellip{
-    display: none
+  &-prev-is-ellip {
+    display: none;
   }
-  &-next-is-ellip{
-    display: none
+  &-next-is-ellip {
+    display: none;
   }
-  &-prev{
-    background-color: #F7F7F7;
+  &-prev {
+    background-image: url(/src/images/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  &-next{
-    background-color: #F7F7F7;
+  &-next {
+    background-image: url(/src/images/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
   }
-  &-is-selected{
+  &-is-selected {
     background-color: $icon-color-secondary;
+  }
+}
+
+//<-------------tablet & desktop------------->
+
+@media (min-width: 768px) {
+  .tui {
+    &-last {
+      display: flex;
+      background-image: url(/src/images/nav-last.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15px;
+    }
+    &-first {
+      display: flex;
+      background-image: url(/src/images/nav-first.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 15px;
+    }
+    &-prev-is-ellip {
+      display: flex;
+    }
+    &-next-is-ellip {
+      display: flex;
+    }
   }
 }

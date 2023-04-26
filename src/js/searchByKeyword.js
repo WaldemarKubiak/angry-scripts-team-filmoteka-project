@@ -16,16 +16,15 @@ const renderPagination = ({ page, total_pages, query }) => {
     firstItemClassName: 'tui-first-child',
     lastItemClassName: 'tui-last-child',
     template: {
-      page: '<a href="#" class="pagination-item pagination-btn tui-page-btn">{{page}}</a>',
-      currentPage:
-        '<strong class="pagination-item pagination-btn tui-page-btn tui-is-selected">{{page}}</strong>',
+      page: '<a href="#" class="pagination tui-page-btn">{{page}}</a>',
+      currentPage: '<strong class="pagination tui-page-btn tui-is-selected">{{page}}</strong>',
       moveButton:
-        '<a href="#" class="pagination-item tui-page-btn tui-{{type}}">' +
-        '<span class="pagination-btn tui-ico-{{type}}">{{type}}</span>' +
+        '<a href="#" class="pagination tui-page-btn tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}"></span>' +
         '</a>',
       disabledMoveButton:
-        '<span class="pagination-item tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="pagination-btn tui-ico-{{type}}">{{type}}</span>' +
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}"></span>' +
         '</span>',
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
@@ -42,6 +41,12 @@ const renderPagination = ({ page, total_pages, query }) => {
         renderMovieCollection(data.results);
       })
       .catch(error => console.error(error));
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   });
 };
 
