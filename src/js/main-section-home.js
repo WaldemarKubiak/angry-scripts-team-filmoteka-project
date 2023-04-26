@@ -1,7 +1,7 @@
 import API from './api';
 import renderMovieCollection from './renderMovieCollection';
-
-API.getTrending()
+let page = 1;
+API.getTrending(page)
   .then(data => data.results)
   .then(renderMovieCollection)
   .then(() => {
