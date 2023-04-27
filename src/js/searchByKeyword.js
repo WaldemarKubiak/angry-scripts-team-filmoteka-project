@@ -54,7 +54,6 @@ const searchByKeyword = query => {
   fetch(`${MAIN_URL}/search/movie?api_key=${API_KEY}&query=${query}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data.results);
       if (data.results.length === 0) {
         noResults.classList.add('active');
         document.querySelector('#pagination').innerHTML = '';
